@@ -1,0 +1,68 @@
+<table class="table align-middle mb-0 bg-white">
+  <thead class="bg-light">
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>Game</th>
+      <th>W</th>
+      <th>L</th>
+      <th>D</th>
+      <th>Goal Differece</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let standing of standings">
+      <td>{{standing.rank}}</td>
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+              [src]="standing.team.logo"
+              [alt]="standing.team.name"
+              style="width: 45px; height: 45px"
+              class="square-circle"
+              />
+
+        </div>
+      </td>
+      <td>
+        <p class="fw-bold mb-1"><a [routerLink]="['/','fixtures']" [queryParams]="{leagueId: league, teamId: standing.team.id }">
+          {{standing.team.name}}
+        </a></p>
+      </td>
+
+      <td>
+        <p class="fw-normal mb-1">{{standing.all.played}}</p>
+
+      </td>
+
+      <td>
+        <p class="fw-normal mb-1">{{standing.all.win}}</p>
+
+      </td>
+
+      <td>
+        <p class="fw-normal mb-1">{{standing.all.draw}}</p>
+
+      </td>
+
+      <td>
+        <p class="fw-normal mb-1">{{standing.all.lose}}</p>
+
+      </td>
+
+      <td>
+        <p class="fw-normal mb-1">{{standing.goalsDiff}}</p>
+
+      </td>
+
+      <td>
+        <p class="fw-normal mb-1">{{standing.points}}</p>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

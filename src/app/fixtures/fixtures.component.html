@@ -1,0 +1,46 @@
+<table class="table table-borderless">
+    <col width="10px" />
+    <col width="20px" />
+    <col width="5px" />
+    <col width="10px" />
+    <col width="5px" />
+    <col width="20px" />
+    <col width="10px" />
+  <thead>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fixture of fixtures">
+      <td>
+        <img
+        [src]="fixture.teams.home.logo"
+        [alt]="fixture.teams.home.name"
+        style="width: 45px; height: 45px"
+        class="square-circle"
+        />
+      </td>
+      <td>{{fixture.teams.home.name}}</td>
+      <td>{{fixture.goals.home}}</td>
+      <td>-</td>
+      <td>{{fixture.goals.away}}</td>
+      <td>{{fixture.teams.away.name}}</td>
+      <td> <img
+        [src]="fixture.teams.away.logo"
+        [alt]="fixture.teams.away.name"
+        style="width: 45px; height: 45px"
+        class="square-circle"
+        /></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+<button type="button" class="btn btn-default" (click)="back()">Back</button>
+
